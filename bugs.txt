@@ -1,0 +1,8 @@
+1- In css part (body): backgroundcolor should be background-color
+2- In css part (#box): There was no defined position for box
+3- In javascript: counter wasn't defined as variable
+4- In javascript: missing interval definition
+5- In javascript in function start: ID was written wrong "name" should be "nameInput"
+6- In javascript in function: documentstyel should be document.body.style to change color
+7- In javascript in function: ID of box was written with double x "boxx"
+8- In javascript: If condition was missing and it was only written in "counter==0;"
