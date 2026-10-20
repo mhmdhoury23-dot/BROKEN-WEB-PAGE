@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buggy Example</title>
+  <style>
+    body {
+      background-color: lightblue; /*This CSS line makes the whole entire background of the page light blue color*/
+    }
+
+    #box {
+      width: 100px; /*This CSS line defines the width of the box to be exactly 100px*/
+      height: 100px; /*This CSS line defines the height of the box to be exactly 100px*/
+      background: red; /* This CSS line makes the background color of the box red*/
+      position: relative; /* To make the box move we should change its position to relative; this CSS line makes the position of the box relative*/
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bug Practice</h1> <!--This HTML line puts a big heading in the start of the website-->
+
+  <input id="nameInput" type="text"> <!--This HTML line inserts an input box for the user to type in their name-->
+  <button onclick="start()">Start</button> <!--This HTML line inserts a button that's responsible if clicked to start the "start" function-->
+
+  <div id="box"></div> <!--This HTML line makes the division of the box that is under the input box-->
+
+  <script>
+    let counter = 0; // counter alone is not a defined a variable, it should have "let" before; this line makes a varibale named counter that starts at 0.
+    let interval; // Interval used in the function wasn't defined; this line makes the interval.
+    function start() { // This line makes the function that's named start.
+      let input = document.getElementById("nameInput"); // The ID of this input is "nameInput" not "name"; this line defines input for the ID 'nameInput'. 
+      console.log(input.value); // This line makes it so that the console of the website logs in every value inputted by the user into the input box.
+
+      interval = setInterval(function () { // This line sets the interval as an ongoing function.
+        counter++; // This line adds the counter by 1 every cycle of the interval
+        document.body.style.backgroundColor = "yellow"; // was documentstyel , should be document.body.style; this line changes the color of the background from light blue to yellow.
+        let box = document.getElementById("box"); // The ID of this box is "box" not as written "boxx"; this line defines the variable box for the ID "box" element.
+        box.style.left = counter + "px"; // This line changed the position of the box to "counter" number of times to the left.
+
+        if (counter === 10) { // This line starts an if condition of that counter if reached 10 what should happen.
+          clearInterval(interval); // This line clears the interval that was already defined before and revert it.
+          counter = 0; // This function clears the counter variable back to 0 as it reached the max of 10.
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
